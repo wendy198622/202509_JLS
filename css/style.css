@@ -1,0 +1,1209 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;500&family=Noto+Serif+TC:wght@300;400;500;600;700;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.pc {
+  display: block !important;
+}
+
+.mob {
+  display: none !important;
+}
+
+@media (max-width: 800px) {
+  .pc {
+    display: none !important;
+  }
+  .mob {
+    display: block !important;
+  }
+}
+
+body {
+  font-family: 'Noto Sans TC', serif;
+  background: #F5F1EE;
+}
+
+@font-face {
+  i.material-icons {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+  }
+}
+
+.fixed_area {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  background: #3E3A39;
+}
+
+.fixed_area ul {
+  overflow: hidden;
+  max-width: 1520px;
+  height: 72px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.fixed_area ul li {
+  width: calc((100% - 3px) / 4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fixed_area ul li:last-child {
+  margin-right: 0;
+}
+
+.fixed_area ul li a {
+  width: 100%;
+  color: #fff;
+  line-height: 2.4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fixed_area ul li a img {
+  width: auto;
+  height: 42px;
+}
+
+.fixed_area ul li + li {
+  position: relative;
+}
+
+.fixed_area ul li + li::before {
+  content: "";
+  width: 1px;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background: #C7B299;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+section .theme {
+  background-size: cover;
+  background-position: center center;
+}
+
+section .theme1 {
+  background-image: url(../img/theme1_bg.jpg);
+}
+
+section .theme3 {
+  background-image: url(../img/theme3_bg.jpg);
+}
+
+section .theme4 {
+  background-image: url(../img/theme4_bg.jpg);
+}
+
+section .theme7 {
+  background-image: url(../img/theme7_bg.jpg);
+}
+
+section .theme9 {
+  background-image: url(../img/theme9_bg.jpg);
+}
+
+section .video-background-container {
+  position: absolute;
+  /* 讓內容元素可以相對於這個容器定位 */
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  /* 設置為視窗高度，或者你想要的固定高度 */
+  overflow: hidden;
+  /* 確保影片不會超出容器 */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 使用 flexbox 來垂直和水平置中內容 */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .video-background-container #background-video {
+  position: absolute;
+  /* 絕對定位，讓影片覆蓋整個容器 */
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 核心：將影片中心對齊容器中心 */
+  z-index: -1;
+  /* 將影片放在內容下方 */
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* 確保影片能覆蓋整個區域，即使比例不同 */
+}
+
+section .theme {
+  position: relative;
+}
+
+section .theme .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1600px) {
+  section .theme .container {
+    max-width: 8 0%;
+  }
+}
+
+section .theme .bg_txt {
+  width: calc(80 / 1920 * 100%);
+  position: absolute;
+  z-index: 0;
+}
+
+section .theme .title, section .theme .subtitle, section .theme .content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  section .theme .title, section .theme .subtitle, section .theme .content {
+    width: 400px;
+  }
+}
+
+section .theme .maintxt > div {
+  width: 100%;
+}
+
+section .theme .maintxt .title_en {
+  margin-bottom: 12px;
+}
+
+section .theme .maintxt .title_line {
+  width: 77px;
+  margin: 20px 0 50px;
+}
+
+section .theme1 {
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(1080 / 1920 * 100%);
+}
+
+section .theme1 .container {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  margin-left: -300px;
+}
+
+@media (max-width: 1400px) {
+  section .theme1 .container {
+    margin-left: -200px;
+  }
+}
+
+section .theme1 .title2 {
+  margin: 20px auto;
+}
+
+section .theme2 {
+  margin-top: -7.5%;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 1500px) {
+  section .theme2 {
+    margin-top: -6%;
+  }
+}
+
+section .theme2 .bg_txt {
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 1700px) {
+  section .theme2 .container {
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 1500px) {
+  section .theme2 .container {
+    width: calc(100% - 120px);
+  }
+}
+
+section .theme2 .container .innerbox {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1700px) {
+  section .theme2 .container .innerbox {
+    gap: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 1500px) {
+  section .theme2 .container .innerbox {
+    gap: 40px;
+  }
+}
+
+section .theme2 .video {
+  width: 1072px;
+  height: 599px;
+}
+
+@media (max-width: 1700px) {
+  section .theme2 .video {
+    width: 840px;
+    height: 473px;
+  }
+}
+
+@media (max-width: 1500px) {
+  section .theme2 .video {
+    width: 720px;
+    height: 406px;
+  }
+}
+
+@media (max-width: 1300px) {
+  section .theme2 .video {
+    width: 640px;
+    height: 360px;
+  }
+}
+
+section .theme2 .video iframe {
+  width: 100%;
+  height: 100%;
+  margin-top: 3%;
+}
+
+section .theme2 .maintxt {
+  width: 400px;
+  padding-top: 100px;
+}
+
+section .theme2 .maintxt > div {
+  width: 100%;
+}
+
+@media (max-width: 1300px) {
+  section .theme2 .maintxt {
+    width: calc(400px * 0.9);
+  }
+}
+
+section .theme3 .bg_txt {
+  left: 0;
+  top: 50%;
+}
+
+section .theme3 .maintxt {
+  width: 420px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+@media (max-width: 1300px) {
+  section .theme3 .maintxt {
+    width: calc(420px * 0.9);
+  }
+}
+
+section .theme3 .maintxt .title_line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .theme3 .photobox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+  padding-bottom: 50px;
+}
+
+section .theme3 .photobox .photo_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 14px;
+}
+
+section .theme3 .photobox .photo_group .photo_item img:nth-child(2) {
+  margin-top: -30px;
+}
+
+section .theme4 {
+  width: 100%;
+  height: 0;
+  padding-bottom: calc(1360 / 1920 * 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f1e9e6;
+}
+
+section .theme5 .bg_txt {
+  right: 0;
+  top: -15%;
+}
+
+section .theme5 .maintxt {
+  width: 688px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+@media (max-width: 1300px) {
+  section .theme5 .maintxt {
+    width: calc(688px * 0.9);
+  }
+}
+
+section .theme5 .maintxt .title_line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .theme5 .photobox {
+  padding: 60px 0;
+  overflow: hidden;
+  /* 確保圖片在容器外不會顯示 */
+  position: relative;
+  /* 如果需要絕對定位子元素 */
+  width: 100%;
+  /* 或您需要的寬度 */
+}
+
+section .theme5 .photobox .photo_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 使用 flexbox 讓圖片排成一行 */
+  gap: 12px;
+  margin-bottom: 12px;
+  /* .right 圖片無限往左滾動 */
+  /* .left 圖片無限往右滾動 */
+}
+
+section .theme5 .photobox .photo_group .photo_item {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  /* 防止圖片被壓縮 */
+  width: 20%;
+  /* 假設圖片寬度，請根據您的實際情況調整 */
+}
+
+section .theme5 .photobox .photo_group .photo_item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* 圖片填充方式，可根據需求調整 */
+}
+
+@-webkit-keyframes scrollLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    /* 這裡假設 .right 內的元素總寬度佔滿容器 */
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    /* 這裡假設 .right 內的元素總寬度佔滿容器 */
+  }
+}
+
+section .theme5 .photobox .photo_group.right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-animation: scrollLeft 60s linear infinite;
+          animation: scrollLeft 60s linear infinite;
+  /* 調整 5s 為您期望的速度 */
+}
+
+@-webkit-keyframes scrollRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    /* 這裡假設 .left 內的元素總寬度佔滿容器 */
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    /* 這裡假設 .left 內的元素總寬度佔滿容器 */
+  }
+}
+
+section .theme5 .photobox .photo_group.left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-animation: scrollRight 60s linear infinite;
+          animation: scrollRight 60s linear infinite;
+  /* 調整 5s 為您期望的速度 */
+}
+
+section .theme6 .bg_txt {
+  left: 0;
+  top: 10%;
+}
+
+section .theme6 .maintxt {
+  width: 660px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+@media (max-width: 1300px) {
+  section .theme6 .maintxt {
+    width: calc(660px * 0.9);
+  }
+}
+
+section .theme6 .maintxt .title_line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section .theme6 .photobox {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 14px;
+  padding-bottom: 40px;
+  margin-top: 60px;
+}
+
+section .theme7 {
+  padding-bottom: 60px;
+}
+
+section .theme7 ul#partial-view li {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+section .theme7 ul#partial-view li.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .theme7 .partialViewSlider-nav {
+  width: 60px;
+}
+
+section .theme7 .partialViewSlider-nav.partialViewSlider-prev {
+  left: 10%;
+}
+
+section .theme7 .partialViewSlider-nav.partialViewSlider-next {
+  right: 10%;
+}
+
+section .theme8 {
+  background-color: #1E1E1E;
+  padding-bottom: 60px;
+}
+
+section .theme8 .video-background-container {
+  z-index: 0;
+}
+
+section .theme8 .bg_txt {
+  left: 0;
+  top: 10%;
+}
+
+section .theme8 .innerbox {
+  position: relative;
+}
+
+section .theme8 .maintxt {
+  width: 422px;
+  position: absolute;
+  top: 100px;
+  left: calc(215 / 1920 * 100%);
+}
+
+@media (max-width: 1300px) {
+  section .theme8 .maintxt {
+    width: calc(422px * 0.9);
+  }
+}
+
+section .theme8 .photobox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  padding: 40px 0;
+  position: relative;
+  padding-left: calc(215 / 1920 * 100%);
+  /* 當對應的 label 被點擊，進而選中 radio button 時，改變 label 的樣式 */
+  /* 這裡我們直接使用 id 來關聯 */
+  /* 點擊 radio1 後顯示對應的大圖 */
+  /* 這裡我們使用 ~ 來定位到 .photo_large_group */
+}
+
+section .theme8 .photobox input[type="radio"] {
+  display: none;
+}
+
+section .theme8 .photobox .photo_small_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 12px;
+  width: calc(640 / 1920 * 100%);
+}
+
+section .theme8 .photobox .photo_small_group .photo_small_item {
+  cursor: pointer;
+  width: calc((100% - 12px) / 2);
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+section .theme8 .photobox .photo_large_group {
+  width: calc(1240 / 1920 * 100%);
+}
+
+section .theme8 .photobox .photo_large_group .photo_large_item {
+  display: none;
+}
+
+section .theme8 .photobox #radio1:checked ~ .photo_small_group .photo_small_item[for="radio1"],
+section .theme8 .photobox #radio2:checked ~ .photo_small_group .photo_small_item[for="radio2"],
+section .theme8 .photobox #radio3:checked ~ .photo_small_group .photo_small_item[for="radio3"],
+section .theme8 .photobox #radio4:checked ~ .photo_small_group .photo_small_item[for="radio4"] {
+  position: relative;
+}
+
+section .theme8 .photobox #radio1:checked ~ .photo_small_group .photo_small_item[for="radio1"]:before,
+section .theme8 .photobox #radio2:checked ~ .photo_small_group .photo_small_item[for="radio2"]:before,
+section .theme8 .photobox #radio3:checked ~ .photo_small_group .photo_small_item[for="radio3"]:before,
+section .theme8 .photobox #radio4:checked ~ .photo_small_group .photo_small_item[for="radio4"]:before {
+  content: "";
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border: 10px solid #bbaf9f;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+section .theme8 .photobox #radio1:checked ~ .photo_large_group .photo_large_item[id="large-img1"],
+section .theme8 .photobox #radio2:checked ~ .photo_large_group .photo_large_item[id="large-img2"],
+section .theme8 .photobox #radio3:checked ~ .photo_large_group .photo_large_item[id="large-img3"],
+section .theme8 .photobox #radio4:checked ~ .photo_large_group .photo_large_item[id="large-img4"] {
+  display: block;
+}
+
+section .theme8 ul#partial-view-wall li {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+section .theme8 ul#partial-view-wall li.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+section .theme8 .partialViewSlider-nav {
+  display: none;
+}
+
+section .theme8 .partialViewSlider-dots {
+  width: calc( 40px * 13);
+  height: 4px;
+  bottom: -26px;
+  position: relative;
+  background: #f5f1ee;
+  z-index: 1;
+}
+
+section .theme8 .partialViewSlider-dots li {
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: -15px;
+  z-index: 2;
+}
+
+section .theme8 .partialViewSlider-dots li a {
+  width: 100%;
+  height: 4px;
+  margin: 0;
+}
+
+section .theme8 .partialViewSlider-dots li a:before {
+  width: 100%;
+  height: 4px;
+  border: 0;
+  background: #f5f1ee;
+  border-radius: 0;
+}
+
+section .theme8 .partialViewSlider-dots li.active a:before {
+  border: 0;
+  background: #bbaf9f;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(1).active {
+  width: calc( 40px * 1);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(2).active {
+  width: calc( 40px * 2);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(3).active {
+  width: calc( 40px * 3);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(4).active {
+  width: calc( 40px * 4);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(5).active {
+  width: calc( 40px * 5);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(6).active {
+  width: calc( 40px * 6);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(7).active {
+  width: calc( 40px * 7);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(8).active {
+  width: calc( 40px * 8);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(9).active {
+  width: calc( 40px * 9);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(10).active {
+  width: calc( 40px * 10);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(11).active {
+  width: calc( 40px * 11);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(12).active {
+  width: calc( 40px * 12);
+  z-index: 3;
+}
+
+section .theme8 .partialViewSlider-dots li:nth-child(13).active {
+  width: calc( 40px * 13);
+  z-index: 3;
+}
+
+section .theme9 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+section .theme9 .bg_txt {
+  right: 0;
+  top: 2%;
+}
+
+section .theme9 .info {
+  width: calc(920 / 1920 * 100%);
+  height: 100vh;
+  position: relative;
+}
+
+section .theme9 .info .infotxt {
+  width: calc(606 / 920 * 100%);
+  height: 0;
+  padding-bottom: 36.5%;
+  position: absolute;
+  right: 6%;
+  top: 26%;
+}
+
+@media (max-width: 1500px) {
+  section .theme9 .info .infotxt {
+    top: 20%;
+  }
+}
+
+@media (max-width: 1200px) {
+  section .theme9 .info .infotxt {
+    top: 16%;
+  }
+}
+
+section .theme9 .reserve-form {
+  width: calc(1000 / 1920 * 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section .theme9 .reserve-form .maintxt {
+  width: 412px;
+}
+
+@media (max-width: 1300px) {
+  section .theme9 .reserve-form .maintxt {
+    width: calc(412px * 0.9);
+  }
+}
+
+section .theme9 .reserve-form .maintxt .title_line {
+  margin: 20px auto;
+}
+
+section .theme9 .reserve-form .maintxt .contxt {
+  margin-top: 40px;
+}
+
+section .theme9 .reserve-form .formBox {
+  width: 412px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  border-top: 1px solid #000;
+  padding-top: 20px;
+  /* Submit Button */
+}
+
+section .theme9 .reserve-form .formBox .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+section .theme9 .reserve-form .formBox .form-group label {
+  width: 90px;
+  font-size: 1.1em;
+  color: #555;
+  font-weight: normal;
+}
+
+section .theme9 .reserve-form .formBox .form-group input[type="text"],
+section .theme9 .reserve-form .formBox .form-group input[type="tel"],
+section .theme9 .reserve-form .formBox .form-group select {
+  width: calc(100% - 90px);
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 確保 padding 不會影響寬度 */
+}
+
+section .theme9 .reserve-form .formBox .form-group input::-webkit-input-placeholder,
+section .theme9 .reserve-form .formBox .form-group select::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+section .theme9 .reserve-form .formBox .form-group input:-ms-input-placeholder,
+section .theme9 .reserve-form .formBox .form-group select:-ms-input-placeholder {
+  color: #aaa;
+}
+
+section .theme9 .reserve-form .formBox .form-group input::-ms-input-placeholder,
+section .theme9 .reserve-form .formBox .form-group select::-ms-input-placeholder {
+  color: #aaa;
+}
+
+section .theme9 .reserve-form .formBox .form-group input::placeholder,
+section .theme9 .reserve-form .formBox .form-group select::placeholder {
+  color: #aaa;
+}
+
+section .theme9 .reserve-form .formBox .form-group .room-type-selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  /* 允許換行 */
+}
+
+section .theme9 .reserve-form .formBox .form-group .room-type-selector input[type="radio"] {
+  display: none;
+  /* 隱藏原始 radio button */
+}
+
+section .theme9 .reserve-form .formBox .form-group .room-type-selector label {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  -webkit-transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-size: 1em;
+  color: #555;
+  font-weight: normal;
+  /* 房型標籤不需要粗體 */
+  text-align: center;
+}
+
+section .theme9 .reserve-form .formBox .form-group .room-type-selector label:hover {
+  background-color: #eee;
+}
+
+section .theme9 .reserve-form .formBox .form-group .room-type-selector input[type="radio"]:checked + label {
+  background-color: #d3a76a;
+  /* 點擊時的顏色，類似圖片中的金色 */
+  color: #fff;
+  border-color: #d3a76a;
+  font-weight: bold;
+}
+
+section .theme9 .reserve-form .formBox .form-group.checkbox-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* 水平排列 checkbox 和 label */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+}
+
+section .theme9 .reserve-form .formBox .form-group.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  margin-right: 10px;
+  outline: 0;
+  padding: 0;
+}
+
+section .theme9 .reserve-form .formBox .form-group.checkbox-group label {
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  width: 100%;
+  text-align: justify;
+}
+
+section .theme9 .reserve-form .formBox .submit-button {
+  width: 100%;
+  padding: 15px 25px;
+  background-color: #333;
+  /* 深色按鈕 */
+  color: white;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  letter-spacing: 2px;
+}
+
+section .theme9 .reserve-form .formBox .submit-button:hover {
+  background-color: #555;
+  /* 滑鼠懸停效果 */
+}
+
+section .theme9 .reserve-form .formBox .form-notice {
+  margin-top: 10px;
+  color: #777;
+  padding-top: 20px;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+
+section .theme9 .reserve-form .formBox .form-notice p {
+  font-size: 14px;
+}
+
+.popup {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.popup .close {
+  width: 60px;
+  height: 60px;
+  background-color: #72adb6;
+  position: absolute;
+  right: -30px;
+  top: -10px;
+  z-index: 10;
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .popup .close {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    right: -25px;
+    top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .popup .close {
+    width: 40px;
+    height: 40px;
+    right: -10px;
+    top: 10px;
+  }
+}
+
+.popup .close:before {
+  content: '\e5cd';
+  font-family: 'Material Icons';
+  color: #fff;
+  font-size: 40px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+@media (max-width: 600px) {
+  .popup .close:before {
+    font-size: 30px;
+  }
+}
+
+.popup .close:hover, .popup .close:focus {
+  background-color: #3d93ab;
+}
+
+.popup .popup_message {
+  width: 320px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color: #fff;
+  color: #000000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.popup.is_acted {
+  opacity: 1;
+  visibility: visible;
+}
+
+.privacy_theme {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #000;
+}
+
+.privacy_theme h2 {
+  text-align: center;
+  font-size: 36px;
+  margin: 40px;
+}
+
+.privacy_theme h3 {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.privacy_theme p {
+  text-align: justify;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #787878;
+}
+
+.fp-prev, .fp-next {
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+
+.fp-controlArrow.fp-prev {
+  left: 5px;
+}
+
+.fp-controlArrow.fp-next {
+  right: 5px;
+}
+/*# sourceMappingURL=style.css.map */

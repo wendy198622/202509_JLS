@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>知禮序 日系建築</title>
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Resource-type" content="" />
+    <!-- <meta property="og:image" content="https://www.zyed.com.tw/VITRUVIUS/img/1200x630.png"> -->
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/fullpage.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/partialviewslider.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- js -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/slick.js"></script>
+    <!-- <script type="text/javascript" src="js/fullpage.js"></script> -->
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/base64.js"></script>
+    <script type="text/javascript" src="js/partialviewslider.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="fixed_area">
+            <ul>                
+                <li><a href="tel:037467888"><img src="img/nav01.svg" alt=""></a></li>
+                <li><a href="#reservation"><img src="img/nav02.svg" alt=""></a></li>
+                <li><a href="https://maps.app.goo.gl/VWFdVQrHom78DkT97?g_st=ipc" target="_blank"><img src="img/nav03.svg" alt=""></a></li>
+                <li><a href="https://www.facebook.com/share/1JsLRwTrTJ/?mibextid=wwXIfr" target="_blank"><img src="img/nav04.svg" alt=""></a></li>
+            </ul>
+        </div>
+        <section>
+            <div class="theme theme1">
+                <div class="container">
+                    <div class="title title1">
+                        <img class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" src="img/theme1_title1.svg"
+                            alt="">
+                    </div>
+                    <div class="title title2">
+                        <img class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" src="img/theme1_title2.svg"
+                            alt="">
+                    </div>
+                    <div class="subtitle">
+                        <img class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" src="img/theme1_subtitle.svg"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme2">
+                <div class="bg_txt">
+                    <img src="img/theme2_bgtxt.svg" alt="">
+                </div>
+                <div class="container">
+                    <div class="innerbox">
+                        <div class="video">
+                            <iframe src="https://www.youtube.com/embed/S-Wv95ZZMTw?si=0P68Im8kiy9XDBd0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="maintxt">
+                            <div class="title_en">
+                                <img src="img/theme2_title_en.svg" alt="">
+                            </div>
+                            <div class="title">
+                                <img src="img/theme2_title.svg" alt="">
+                            </div>
+                            <div class="title_line">
+                                <img src="img/theme_line_red.svg" alt="">
+                            </div>
+                            <div class="contxt">
+                                <img src="img/theme2_txt.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme3">
+                <div class="bg_txt">
+                    <img src="img/theme3_bgtxt.svg" alt="">
+                </div>
+                <div class="container">
+                    <div class="innerbox">
+                        <div class="maintxt">
+                            <div class="title_en">
+                                <img src="img/theme3_title_en.svg" alt="">
+                            </div>
+                            <div class="title">
+                                <img src="img/theme3_title.svg" alt="">
+                            </div>
+                            <div class="title_line">
+                                <img src="img/theme_line_red.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="photobox">
+                            <div class="photo">
+                                <img src="img/theme3_photo1.jpg" alt="">
+                            </div>
+                            <div class="photo_group">
+                                <div class="photo_item">
+                                    <img src="img/theme3_photo2.jpg" alt="">
+                                    <img src="img/theme3_photo2_txt.svg" alt="">
+                                </div>
+                                <div class="photo_item">
+                                    <img src="img/theme3_photo3.jpg" alt="">
+                                    <img src="img/theme3_photo3_txt.svg" alt="">
+                                </div>
+                                <div class="photo_item">
+                                    <img src="img/theme3_photo4.jpg" alt="">
+                                    <img src="img/theme3_photo4_txt.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme4">
+                <div class="photo">
+                    <img src="img/theme4_photo.jpg" alt="">
+                </div>
+            </div>
+            <div class="theme theme5">
+                <div class="video-background-container">
+                    <video autoplay muted loop playsinline id="background-video">
+                        <source src="img/Essence.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="bg_txt">
+                    <img src="img/theme5_bgtxt.svg" alt="">
+                </div>
+                <div class="innerbox">
+                    <div class="maintxt">
+                        <div class="title_en">
+                            <img src="img/theme5_title_en.svg" alt="">
+                        </div>
+                        <div class="title">
+                            <img src="img/theme5_title.svg" alt="">
+                        </div>
+                        <div class="title_line">
+                            <img src="img/theme_line_white.svg" alt="">
+                        </div>
+                        <div class="contxt">
+                            <img src="img/theme5_txt.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="photobox">
+                        <div class="photo_group right">
+                            <div class="photo_item">
+                                <img src="img/theme5_photo9.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo1.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo2.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo3.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo4.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo5.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo6.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo7.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo8.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo9.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo1.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="photo_group left">
+                            <div class="photo_item">
+                                <img src="img/theme5_photo9.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo1.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo2.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo3.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo4.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo5.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo6.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo7.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo8.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo9.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo1.jpg" alt="">
+                            </div>
+                            <div class="photo_item">
+                                <img src="img/theme5_photo2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme6">
+                <div class="video-background-container">
+                    <video autoplay muted loop playsinline id="background-video">
+                        <source src="img/Composition.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="bg_txt">
+                    <img src="img/theme6_bgtxt.svg" alt="">
+                </div>
+                <div class="container">
+                    <div class="innerbox">
+                        <div class="maintxt">
+                            <div class="title_en">
+                                <img src="img/theme6_title_en.svg" alt="">
+                            </div>
+                            <div class="title">
+                                <img src="img/theme6_title.svg" alt="">
+                            </div>
+                            <div class="title_line">
+                                <img src="img/theme_line_red.svg" alt="">
+                            </div>
+                            <div class="contxt">
+                                <img src="img/theme6_txt.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="photobox">
+                            <div class="photo">
+                                <img src="img/theme6_photo.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme7">
+                <ul id="partial-view">
+                    <li>
+                        <img src="img/theme7_photo1.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/theme7_photo2.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/theme7_photo3.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/theme7_photo4.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/theme7_photo5.jpg" />
+                    </li>
+                </ul>
+            </div>
+            <div class="theme theme8">
+                <div class="video-background-container">
+                    <video autoplay muted loop playsinline id="background-video">
+                        <source src="img/Ethereal.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="bg_txt">
+                    <img src="img/theme8_bgtxt.svg" alt="">
+                </div>
+                <div class="innerbox">
+                    <div class="photobox">
+                        <div class="maintxt">
+                            <div class="title_en">
+                                <img src="img/theme8_title_en.svg" alt="">
+                            </div>
+                            <div class="title">
+                                <img src="img/theme8_title.svg" alt="">
+                            </div>
+                            <div class="title_line">
+                                <img src="img/theme_line_red.svg" alt="">
+                            </div>
+                            <div class="contxt">
+                                <img src="img/theme8_txt.svg" alt="">
+                            </div>
+                        </div>
+
+                        <input type="radio" id="radio1" name="photo-select" checked>
+                        <input type="radio" id="radio2" name="photo-select">
+                        <input type="radio" id="radio3" name="photo-select">
+                        <input type="radio" id="radio4" name="photo-select">
+                    
+                        <div class="photo_small_group">
+                            <label for="radio1" class="photo_small_item">
+                                <img class="photo_small1" src="img/theme8_photo1.jpg" alt="">
+                            </label>
+                            <label for="radio2" class="photo_small_item">
+                                <img class="photo_small2" src="img/theme8_photo2.jpg" alt="">
+                            </label>
+                            <label for="radio3" class="photo_small_item">
+                                <img class="photo_small3" src="img/theme8_photo3.jpg" alt="">
+                            </label>
+                            <label for="radio4" class="photo_small_item">
+                                <img class="photo_small4" src="img/theme8_photo4.jpg" alt="">
+                            </label>
+                            <div class="phototxt">
+                                <img src="img/theme8_phototxt.svg" alt="">
+                            </div>
+                        </div>
+                    
+                        <div class="photo_large_group">
+                            <div id="large-img1" class="photo_large_item">
+                                <img class="photo_large1" src="img/theme8_photo1.jpg" alt="">
+                            </div>
+                            <div id="large-img2" class="photo_large_item">
+                                <img class="photo_large2" src="img/theme8_photo2.jpg" alt="">
+                            </div>
+                            <div id="large-img3" class="photo_large_item">
+                                <img class="photo_large3" src="img/theme8_photo3.jpg" alt="">
+                            </div>
+                            <div id="large-img4" class="photo_large_item">
+                                <img class="photo_large4" src="img/theme8_photo4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="photo_wall">
+                        <ul id="partial-view-wall">
+                            <li>
+                                <img src="img/theme8_sliderphoto1.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto2.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto3.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto4.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto5.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto6.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto7.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto8.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto9.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto10.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto11.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto12.jpg" />
+                            </li>
+                            <li>
+                                <img src="img/theme8_sliderphoto13.jpg" />
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="theme theme9">
+                <div class="bg_txt">
+                    <img src="img/theme9_bgtxt.svg" alt="">
+                </div>
+                <div class="info">
+                    <div class="infotxt">
+                        <img src="img/theme9_infotxt.svg" alt="">
+                    </div>
+
+                </div>
+                <div class="reserve-form">
+                    <div class="maintxt">
+                        <div class="title_en">
+                            <img src="img/theme9_title_en.svg" alt="">
+                        </div>
+                        <div class="title">
+                            <img src="img/theme9_title.svg" alt="">
+                        </div>
+                        <div class="title_line">
+                            <img src="img/theme_line_red.svg" alt="">
+                        </div>
+                        <div class="contxt">
+                            <img src="img/theme9_txt.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="formBox wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.6s">
+                        <div class="form" id="reservation">
+                            <div class="form-group">
+                                <label for="name">姓 名</label>
+                                <input type="text" v-model="name" id="name" name="name" placeholder="請輸入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">聯絡電話</label>
+                                <input type="tel" v-model="phone" id="phone" name="phone" placeholder="請輸入您的電話" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">聯繫時段</label>
+                                <select v-model="time" id="time" name="time" required>
+                                    <option disabled selected value="">請選擇</option>
+                                    <option value="morning">上午</option>
+                                    <option value="afternoon">下午</option>
+                                    <option value="evening">晚上</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>房 型</label>
+                                <div class="room-type-selector" v-model="type">
+                                    <input type="radio" id="room2" name="room-type" value="2房">
+                                    <label for="room2">二 房</label>
+                                    <input type="radio" id="room3" name="room-type" value="3房">
+                                    <label for="room3">三 房</label>
+                                </div>
+                            </div>
+
+                            <div class="form-notice">
+                                <p>您所登錄的個人資料將做以下用途：</p>
+                                <p>(一)本網站所載之相關事項通知</p>
+                                <p>(二)客戶管理與服務</p>
+                                <p>(三)本公司行銷業務之推廣本實際內容以現場公布為準</p>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="agree" name="agree" value="Y" v-model="check" checked required>
+                                <label for="agree">我同意通過電話方式與我聯繫</label>
+                            </div>
+                            <button class="submit-button" v-on:click="sendEmail()">確認送出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    
+        <section class="popup" v-bind:class="{ is_acted: popupIndex != 0 }">
+
+            <div class="formGroup popup_message">
+
+                {{msg}}
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+<!-- <script>
+
+    $(document).ready(function () {
+        new WOW().init();
+        
+		// var partialView = $('#partial-view').partialViewSlider({
+        //     controlsPosition: 'inside',
+        //     prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+        //     nextHtml: '<img src="img/arrow-next.svg" alt="">',
+        // });
+        
+		// var partialViewWall = $('#partial-view-wall').partialViewSlider({
+        //     // controlsPosition: 'outside',
+        //     backdrop: false,
+        //     keyboard: false,
+        //     dots: true,
+        //     // prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+        //     // nextHtml: '<img src="img/arrow-next.svg" alt="">',
+        // });
+
+		// $('#prev').on('click', function(){
+		// 	partialView.prev();
+		// });
+		// $('#next').on('click', function(){
+		// 	partialView.next();
+		// });
+		// $('#play').on('click', function(){
+		// 	partialView.play();
+		// });
+		// $('#pause').on('click', function(){
+		// 	partialView.pause();
+		// });
+	});
+
+
+    new Vue({
+
+        el: '#app',
+
+        data: {
+
+            popupIndex: 0,
+
+            name: "",
+
+            phone: "",
+
+            check: false,
+
+            needInfo: "是",
+
+            message: "",
+
+            email: "",
+
+            msg: "",
+
+            district: "",
+
+            county: "",
+
+            verifycode: "",
+
+            type: "",
+
+            time: "",
+
+            infoIndex: 0 // 0=關閉
+
+        },
+
+        created() { },
+
+        mounted() {
+            var partialView = $('#partial-view').partialViewSlider({
+                controlsPosition: 'inside',
+                prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+                nextHtml: '<img src="img/arrow-next.svg" alt="">',
+            });
+            
+            var partialViewWall = $('#partial-view-wall').partialViewSlider({
+                // controlsPosition: 'outside',
+                backdrop: false,
+                keyboard: false,
+                dots: true,
+                // prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+                // nextHtml: '<img src="img/arrow-next.svg" alt="">',
+            });
+
+            $('#prev').on('click', function(){
+                partialView.prev();
+            });
+            $('#next').on('click', function(){
+                partialView.next();
+            });
+            $('#play').on('click', function(){
+                partialView.play();
+            });
+            $('#pause').on('click', function(){
+                partialView.pause();
+            });
+        },
+
+        methods: {
+
+            showPopup: function (tag) {
+
+                $('.slider_popup').slick('slickGoTo', 0)
+                this.popupIndex = tag
+            },
+
+            sendEmail: function () {
+
+                var self = this;
+
+                // var tomail = "sxccvl238561@gmail.com" //信箱
+                var tomail = "wendy198622@gmai;.com"
+                // cindy89072455@gmail.com
+                var to_name = "知禮序" //信件名稱
+                var subject = "預約賞屋：知禮序" //信件主旨
+                var content = "姓名:" + self.name + "<br>" +
+                    "聯繫時段":" + self.time + "\n" +
+                    "需求房型:" + self.type + "\n" +
+                    "電話:" + self.phone + "<br>" +
+                    "區域:" + self.county + "-" + self.district + "<br>" +
+                    "個人資料集聲明事項:" + (self.check ? "同意" : "不同意") + "<br>" +
+                    "留言:" + self.message + "<br>"
+                //console.log(content)
+
+                if (!self.check) {
+                    self.popupIndex = 10
+                    self.msg = "請勾選同意本公司個資保護條款。"
+                    setTimeout(function () {
+                        self.popupIndex = 0
+                    }, 1000)
+                    return
+                }
+
+                self.msg = "表單傳送中...。"
+                self.popupIndex = 10
+
+
+                fetch('https://yabeesshop.com/forwardMail/mailV2.php', {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: new URLSearchParams({
+                        subject: subject,
+                        body: content,
+                        to: tomail,
+                        to_name: to_name
+                    }).toString()
+                })
+                .then(response => response.json())
+                .then(function (myJson) {
+                    console.log(myJson)
+                    if (myJson.code == 200) {
+                        self.msg = "系統已送出您的表單。"
+                        setTimeout(function () {
+                            self.popupIndex = 0
+                        }, 3000);
+                    } else {
+                        self.msg = "表單送出失敗，請重新送出。"
+                    }
+                });
+
+            },
+
+            enterInfoDailog: function (inedx) {
+
+
+
+            }
+
+        }
+
+    })
+    
+
+</script> -->
+<script>
+        new Vue({
+            el: '#app',
+            data: {
+                popupIndex: 0,
+                name: "",
+                phone: "",
+                check: true, // 預設勾選
+                needInfo: "是",
+                message: "",
+                email: "",
+                msg: "",
+                district: "",
+                county: "",
+                verifycode: "",
+                type: "1房", // 預設值
+                time: "",
+                infoIndex: 0
+            },
+            mounted() {
+                // 初始化 WOW.js 動畫
+                new WOW().init();
+                
+                // 初始化第一個輪播
+                try {
+                    $('#partial-view').partialViewSlider({
+                        controlsPosition: 'inside',
+                        prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+                        nextHtml: '<img src="img/arrow-next.svg" alt="">',
+                    });
+                } catch (e) {
+                    console.error("Failed to initialize partial-view slider:", e);
+                }
+    
+                // 初始化第二個輪播
+                try {
+                    $('#partial-view-wall').partialViewSlider({
+                        backdrop: false,
+                        keyboard: true,
+                        dots: true,
+                        prevHtml: '<img src="img/arrow-prev.svg" alt="">',
+                        nextHtml: '<img src="img/arrow-next.svg" alt="">',
+                    });
+                } catch(e) {
+                    console.error("Failed to initialize partial-view-wall slider:", e);
+                }
+            },
+            methods: {
+                showPopup: function (tag) {
+                    // 如果您有 slick 套件，需要確認它是否也需要在此初始化
+                    // $('.slider_popup').slick('slickGoTo', 0) 
+                    this.popupIndex = tag
+                },
+                sendEmail: function () {
+                    var self = this;
+                    
+                    // *** 修正一個小錯誤：這裡的 email 有個分號 ; ***
+                    // var tomail = "wendy198622@gmai;.com" // 原本的
+                    var tomail = "wendy198622@gmail.com" // 修正後
+    
+                    var to_name = "知禮序"
+                    var subject = "預約賞屋：知禮序"
+                    var content = "姓名:" + self.name + "<br>" +
+                        "聯繫時段:" + self.time + "<br>" +
+                        "需求房型:" + self.type + "<br>" +
+                        "電話:" + self.phone + "<br>" +
+                        "個人資料集聲明事項:" + (self.check ? "同意" : "不同意") + "<br>" 
+                    
+                    if (!self.name || !self.phone || !self.time) {
+                        self.popupIndex = 10
+                        self.msg = "請填寫完整的姓名、電話與聯繫時段。"
+                        setTimeout(function () {
+                            self.popupIndex = 0
+                        }, 2000)
+                        return
+                    }
+    
+                    if (!self.check) {
+                        self.popupIndex = 10
+                        self.msg = "請勾選同意本公司個資保護條款。"
+                        setTimeout(function () {
+                            self.popupIndex = 0
+                        }, 2000)
+                        return
+                    }
+    
+                    self.msg = "表單傳送中...";
+                    self.popupIndex = 10;
+    
+                    fetch('https://yabeesshop.com/forwardMail/mailV2.php', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: new URLSearchParams({
+                            subject: subject,
+                            body: content,
+                            to: tomail,
+                            to_name: to_name
+                        }).toString()
+                    })
+                    .then(response => response.json())
+                    .then(function (myJson) {
+                        console.log(myJson)
+                        if (myJson.code == 200) {
+                            self.msg = "系統已成功送出您的預約！";
+                            setTimeout(function () {
+                                self.popupIndex = 0;
+                                // 清空表單
+                                self.name = "";
+                                self.phone = "";
+                                self.time = "";
+                            }, 3000);
+                        } else {
+                            self.msg = "表單送出失敗，請稍後再試。";
+                        }
+                    }).catch(error => {
+                        console.error('Fetch Error:', error);
+                        self.msg = "網路連線錯誤，請檢查您的網路。";
+                    });
+                }
+            }
+        })
+    </script>
+
+
+</html>
