@@ -31,7 +31,6 @@ img {
 
 body {
   font-family: 'Noto Sans TC', serif;
-  background: #F5F1EE;
 }
 
 @font-face {
@@ -69,6 +68,14 @@ body {
           justify-content: space-between;
 }
 
+@media (max-width: 800px) {
+  .fixed_area ul {
+    max-width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+}
+
 .fixed_area ul li {
   width: calc((100% - 3px) / 4);
   display: -webkit-box;
@@ -101,6 +108,13 @@ body {
 .fixed_area ul li a img {
   width: auto;
   height: 42px;
+}
+
+@media (max-width: 800px) {
+  .fixed_area ul li a img {
+    width: 60%;
+    height: auto;
+  }
 }
 
 .fixed_area ul li + li {
@@ -136,10 +150,6 @@ section .theme3 {
   background-image: url(../img/theme3_bg.jpg);
 }
 
-section .theme4 {
-  background-image: url(../img/theme4_bg.jpg);
-}
-
 section .theme7 {
   background-image: url(../img/theme7_bg.jpg);
 }
@@ -161,6 +171,15 @@ section .theme9 {
   section .theme9 {
     background-image: url(../img/theme9_bg_mob.jpg);
   }
+}
+
+section .theme1, section .theme2, section .theme3, section .theme5, section .theme6, section .theme7, section .theme8, section .theme9 {
+  position: relative;
+  z-index: 2;
+}
+
+section .theme2, section .theme5, section .theme6 {
+  background-color: #F5F1EE;
 }
 
 section .video-background-container {
@@ -296,7 +315,7 @@ section .theme1 .title2 {
 
 section .theme2 {
   margin-top: -7.5%;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 @media (max-width: 1500px) {
@@ -356,6 +375,9 @@ section .theme2 .container .innerbox {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
 }
 
@@ -371,53 +393,52 @@ section .theme2 .container .innerbox {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
 section .theme2 .video {
-  width: 1072px;
-  height: 599px;
-}
-
-@media (max-width: 1700px) {
-  section .theme2 .video {
-    width: 840px;
-    height: 473px;
-  }
-}
-
-@media (max-width: 1500px) {
-  section .theme2 .video {
-    width: 720px;
-    height: 406px;
-  }
-}
-
-@media (max-width: 1300px) {
-  section .theme2 .video {
-    width: 640px;
-    height: 360px;
-  }
+  width: calc(100% - 436px);
+  position: relative;
+  /* 讓 iframe 可以絕對定位 */
+  padding-bottom: 34.2%;
+  /* 16:9 的長寬比例 */
+  height: 0;
+  /* 讓 wrapper 本身的高度為 0，由 padding 撐開 */
+  overflow: hidden;
+  /* 避免內容溢出 */
+  max-width: 100%;
+  /* 確保 wrapper 不會超出其父容器 */
+  background: #000;
+  /* 可選：影片載入前的背景色 */
 }
 
 @media (max-width: 960px) {
   section .theme2 .video {
     width: 100%;
-    height: 540px;
-    margin-top: 40px;
+    padding-bottom: 55.8%;
   }
 }
 
 section .theme2 .video iframe {
+  position: absolute;
+  /* 相對於 .video-responsive-wrapper 定位 */
+  top: 0;
+  left: 0;
   width: 100%;
+  /* 填滿 wrapper 的寬度 */
   height: 100%;
-  margin-top: 3%;
+  /* 填滿 wrapper 的高度 */
+  border: none;
+  /* 移除 iframe 預設邊框 */
 }
 
-@media (max-width: 960px) {
-  section .theme2 .video iframe {
-    margin-top: 0;
-  }
+section .theme2 .video #player-controls {
+  width: 100%;
+  height: 0;
+  padding-bottom: 60%;
 }
 
 section .theme2 .maintxt {
@@ -431,12 +452,13 @@ section .theme2 .maintxt > div {
 
 @media (max-width: 1300px) {
   section .theme2 .maintxt {
-    width: calc(400px * 0.9);
+    width: calc(400px * 0.8);
   }
 }
 
 @media (max-width: 960px) {
   section .theme2 .maintxt {
+    padding-top: 40px;
     width: 75%;
   }
 }
@@ -514,20 +536,58 @@ section .theme3 .photobox .photo_group .photo_item img:nth-child(2) {
 }
 
 section .theme4 {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 0;
   padding-bottom: calc(1360 / 1920 * 100%);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #f1e9e6;
+  overflow: hidden;
 }
 
 @media (max-width: 960px) {
   section .theme4 {
-    height: 0;
-    padding-bottom: calc(1360 / 1920 * 100%);
-    background-attachment: unset;
+    height: 100vh;
+    padding-bottom: 0;
+  }
+}
+
+section .theme4 .horizontal-scroll-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  section .theme4 .horizontal-scroll-bg {
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+  section .theme4 .horizontal-scroll-bg::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+section .theme4 .horizontal-scroll-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: none;
+}
+
+@media (max-width: 960px) {
+  section .theme4 .horizontal-scroll-bg img {
+    height: 100vh;
+    width: auto;
+    -o-object-fit: initial;
+       object-fit: initial;
   }
 }
 
@@ -927,57 +987,97 @@ section .theme8 .photobox #radio4:checked ~ .photo_large_group .photo_large_item
   display: block;
 }
 
-section .theme8 ul#partial-view-wall li {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+section .theme8 .photo_wall {
+  position: relative;
+  /* 為了讓圓點可以定位 */
+  padding-bottom: 50px;
+  /* 給圓點留出空間 */
+  overflow: hidden;
+  /* 隱藏容器外多餘的部分 */
 }
 
-section .theme8 ul#partial-view-wall li.active {
+section .theme8 .photo_wall #partial-view-wall {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* 讓 li 水平排列 */
+  overflow-x: auto;
+  /* 核心：允許水平捲動 */
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  /* 關鍵：開啟水平方向的強力吸附 */
+  scroll-behavior: smooth;
+  /* 讓點擊圓點時的滾動更平滑 */
+  -webkit-overflow-scrolling: touch;
+  /* 在 iOS 上提供流暢的滑動體驗 */
+  /* 隱藏醜陋的滾動條 */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+section .theme8 .photo_wall #partial-view-wall::-webkit-scrollbar {
+  display: none;
+}
+
+section .theme8 .photo_wall #partial-view-wall li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80%;
+          flex: 0 0 80%;
+  /* 每個項目佔據容器80%寬度，你可以調整這個值 */
+  width: 80%;
+  margin: 0 10px;
+  /* 項目之間的間距 */
+  scroll-snap-align: center;
+  /* 關鍵：讓每個項目都對齊到容器中心 */
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  /* 保持您原有的縮放效果 */
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+section .theme8 .photo_wall #partial-view-wall li.active {
+  /* 當項目在中間時，讓它變大 */
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-section .theme8 .partialViewSlider-nav {
-  display: none;
-}
-
-section .theme8 .partialViewSlider-dots {
+section .theme8 .custom-dots-container {
   width: calc( 40px * 13);
   height: 4px;
   bottom: -26px;
   position: relative;
   background: #f5f1ee;
   z-index: 1;
+  margin: 0 auto;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots {
+  section .theme8 .custom-dots-container {
     width: 90%;
   }
 }
 
-section .theme8 .partialViewSlider-dots li {
+section .theme8 .custom-dots-container .custom-dot {
   width: 40px;
   height: 4px;
   position: absolute;
   left: 0;
-  top: -15px;
+  top: 0;
   z-index: 2;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li {
+  section .theme8 .custom-dots-container .custom-dot {
     width: calc(100% / 13);
   }
 }
 
-section .theme8 .partialViewSlider-dots li a {
-  width: 100%;
-  height: 4px;
-  margin: 0;
-}
-
-section .theme8 .partialViewSlider-dots li a:before {
+section .theme8 .custom-dots-container .custom-dot:before {
+  content: "";
+  display: block;
   width: 100%;
   height: 4px;
   border: 0;
@@ -985,150 +1085,150 @@ section .theme8 .partialViewSlider-dots li a:before {
   border-radius: 0;
 }
 
-section .theme8 .partialViewSlider-dots li.active a:before {
+section .theme8 .custom-dots-container .custom-dot.active:before {
   border: 0;
   background: #bbaf9f;
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(1).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(1).active {
   width: calc( 40px * 1);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(1).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(1).active {
     width: calc(100% / 13 * 1);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(2).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(2).active {
   width: calc( 40px * 2);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(2).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(2).active {
     width: calc(100% / 13 * 2);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(3).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(3).active {
   width: calc( 40px * 3);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(3).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(3).active {
     width: calc(100% / 13 * 3);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(4).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(4).active {
   width: calc( 40px * 4);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(4).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(4).active {
     width: calc(100% / 13 * 4);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(5).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(5).active {
   width: calc( 40px * 5);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(5).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(5).active {
     width: calc(100% / 13 * 5);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(6).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(6).active {
   width: calc( 40px * 6);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(6).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(6).active {
     width: calc(100% / 13 * 6);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(7).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(7).active {
   width: calc( 40px * 7);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(7).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(7).active {
     width: calc(100% / 13 * 7);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(8).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(8).active {
   width: calc( 40px * 8);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(8).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(8).active {
     width: calc(100% / 13 * 8);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(9).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(9).active {
   width: calc( 40px * 9);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(9).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(9).active {
     width: calc(100% / 13 * 9);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(10).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(10).active {
   width: calc( 40px * 10);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(10).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(10).active {
     width: calc(100% / 13 * 10);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(11).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(11).active {
   width: calc( 40px * 11);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(11).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(11).active {
     width: calc(100% / 13 * 11);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(12).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(12).active {
   width: calc( 40px * 12);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(12).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(12).active {
     width: calc(100% / 13 * 12);
   }
 }
 
-section .theme8 .partialViewSlider-dots li:nth-child(13).active {
+section .theme8 .custom-dots-container .custom-dot:nth-child(13).active {
   width: calc( 40px * 13);
   z-index: 3;
 }
 
 @media (max-width: 600px) {
-  section .theme8 .partialViewSlider-dots li:nth-child(13).active {
+  section .theme8 .custom-dots-container .custom-dot:nth-child(13).active {
     width: calc(100% / 13 * 13);
   }
 }
@@ -1226,12 +1326,15 @@ section .theme9 .reserve-form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 60px;
+  background-color: #f3f2f0;
 }
 
 @media (max-width: 960px) {
   section .theme9 .reserve-form {
     width: 100%;
     margin: 40px auto;
+    padding-bottom: 100px;
   }
 }
 

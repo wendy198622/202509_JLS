@@ -19,7 +19,7 @@ img{
 
 body {
     font-family: 'Noto Sans TC', serif;
-    background: #F5F1EE;
+    // background: #F5F1EE;
 }
 
 i.material-icons{
@@ -48,7 +48,12 @@ i.material-icons{
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: space-between;        
+        justify-content: space-between;  
+        @media (max-width:800px) {
+            max-width: 100%;
+            height: auto;
+            padding: 10px 0;
+        }      
         li{
             width: calc((100% - 3px) / 4);
             display: flex;
@@ -66,6 +71,10 @@ i.material-icons{
                 img{
                     width: auto;
                     height: 42px;
+                    @media (max-width:800px) {
+                        width: 60%;
+                        height: auto;
+                    }      
                 }
             }
         }
@@ -94,7 +103,7 @@ section{
     .theme1{ background-image: url(../img/theme1_bg.jpg);}
     // .theme2{ background-image: url(../img/theme2_bg.jpg);}
     .theme3{ background-image: url(../img/theme3_bg.jpg);}
-    .theme4{ background-image: url(../img/theme4_bg.jpg);}
+    // .theme4{ background-image: url(../img/theme4_bg.jpg);}
     // .theme5{ background-image: url(../img/theme5_bg.jpg);}
     // .theme6{ background-image: url(../img/theme6_bg.jpg);}
     .theme7{ background-image: url(../img/theme7_bg.jpg);}
@@ -110,6 +119,13 @@ section{
         .theme7{ background-image: url(../img/theme7_bg_mob.jpg);}
         // .theme8{ background-image: url(../img/theme8_bg_mob.jpg);}
         .theme9{ background-image: url(../img/theme9_bg_mob.jpg);}
+    }
+    .theme1, .theme2, .theme3, .theme5, .theme6, .theme7, .theme8, .theme9 {
+        position: relative; // 確保每個 theme 都有自己的堆疊環境
+        z-index: 2;         // 確保它們的層級都高於 theme4 的背景層
+    }
+    .theme2, .theme5, .theme6 {
+        background-color: #F5F1EE; 
     }
 
     .video-background-container{
@@ -218,7 +234,7 @@ section{
         // height: 0;
         // padding-bottom: calc(740 / 1920 * 100%);
         margin-top: -7.5%;
-        padding-bottom: 60px;
+        padding-bottom: 80px;
         @media (max-width: 1500px) {
             margin-top: -6%;
         }
@@ -252,43 +268,45 @@ section{
                 @media (max-width: 1700px) {
                     gap: 60px;
                     justify-content: center;
+                    align-items: flex-end;
                 }
                 @media (max-width: 1500px) {
                     gap: 40px;
                 }
                 @media (max-width: 960px) {
                     flex-direction: column-reverse;
+                    align-items: center;
                     // gap: 0;
                 }
             }
         }
         .video{
-            width: 1072px;
-            height: 599px;
-            @media (max-width: 1700px) {
-                width: 840px;
-                height: 473px;
-            }
-            @media (max-width: 1500px) {
-                width: 720px;
-                height: 406px;
-            }
-            @media (max-width: 1300px) {
-                width: 640px;
-                height: 360px;
-            }
+            width: calc(100% - 436px);
+            // height: 599px;
+            position: relative; /* 讓 iframe 可以絕對定位 */
+            padding-bottom: 34.2%; /* 16:9 的長寬比例 */
+            height: 0; /* 讓 wrapper 本身的高度為 0，由 padding 撐開 */
+            overflow: hidden; /* 避免內容溢出 */
+            max-width: 100%; /* 確保 wrapper 不會超出其父容器 */
+            background: #000; /* 可選：影片載入前的背景色 */
+            
             @media (max-width: 960px) {
                 width: 100%;
-                height: 540px;
-                margin-top: 40px;
+                padding-bottom: 55.8%; 
+                // margin-top: 40px;
             }
             iframe{
+                position: absolute; /* 相對於 .video-responsive-wrapper 定位 */
+                top: 0;
+                left: 0;
+                width: 100%; /* 填滿 wrapper 的寬度 */
+                height: 100%; /* 填滿 wrapper 的高度 */
+                border: none; /* 移除 iframe 預設邊框 */
+            }
+            #player-controls{
                 width: 100%;
-                height: 100%;
-                margin-top: 3%;
-                @media (max-width: 960px) {
-                    margin-top: 0;
-                }
+                height: 0;
+                padding-bottom: 60%;
             }
         }
         .maintxt{
@@ -296,9 +314,10 @@ section{
             padding-top: 100px;
             > div{ width: 100%;}
             @media (max-width: 1300px) {
-                width: calc(400px * 0.9);
+                width: calc(400px * 0.8);
             }
             @media (max-width: 960px) {
+                padding-top: 40px;
                 width: 75%;
             }
             .title_en{
@@ -360,18 +379,47 @@ section{
 
         }     
     }
-    .theme4{
+    .theme4 {
+        position: relative;
+        z-index: 1;
         width: 100%;
         height: 0;
         padding-bottom: calc(1360 / 1920 * 100%);
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: #f1e9e6;
+        overflow: hidden;
         @media (max-width: 960px) {
-            height: 0;
-            padding-bottom: calc(1360 / 1920 * 100%);
-            background-attachment: unset;
+            height: 100vh;
+            padding-bottom: 0;
+        }
+        
+        .horizontal-scroll-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            
+            overflow: hidden; // 電腦版：不允許任何捲動
+            @media (max-width: 960px) {
+                overflow-x: auto;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+    
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                max-width: none;
+                @media (max-width: 960px) {
+                    height: 100vh;
+                    width: auto;
+                    object-fit: initial;
+                }
+            }
         }
     }
     .theme5{
@@ -642,19 +690,58 @@ section{
                 display: block;
             }
         }   
-        ul#partial-view-wall{
-            li{
-                // width: 90%;
-                transform: scale(.9);
-                &.active{
-                    transform: scale(1);
+        .photo_wall {
+            position: relative; /* 為了讓圓點可以定位 */
+            padding-bottom: 50px; /* 給圓點留出空間 */
+            overflow: hidden; /* 隱藏容器外多餘的部分 */
+            #partial-view-wall {
+                display: flex; /* 讓 li 水平排列 */
+                overflow-x: auto; /* 核心：允許水平捲動 */
+                scroll-snap-type: x mandatory; /* 關鍵：開啟水平方向的強力吸附 */
+                scroll-behavior: smooth; /* 讓點擊圓點時的滾動更平滑 */
+                -webkit-overflow-scrolling: touch; /* 在 iOS 上提供流暢的滑動體驗 */
+                
+                /* 隱藏醜陋的滾動條 */
+                -ms-overflow-style: none;  
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                li {
+                    flex: 0 0 80%; /* 每個項目佔據容器80%寬度，你可以調整這個值 */
+                    width: 80%;
+                    margin: 0 10px; /* 項目之間的間距 */
+                    scroll-snap-align: center; /* 關鍵：讓每個項目都對齊到容器中心 */
+                    transform: scale(0.9); /* 保持您原有的縮放效果 */
+                    transition: transform 0.3s ease;
+                    
+                    &.active { /* 當項目在中間時，讓它變大 */
+                        transform: scale(1);
+                    }
                 }
             }
+            // .custom-dots-container{
+            //     position: absolute;
+            //     bottom: 20px;
+            //     left: 50%;
+            //     transform: translateX(-50%);
+            //     display: flex;
+            //     gap: 10px;
+            //     .custom-dot {
+            //         width: 12px;
+            //         height: 12px;
+            //         background-color: #ccc;
+            //         border-radius: 50%;
+            //         cursor: pointer;
+            //         transition: background-color 0.3s ease;
+            //         &.active {
+            //             background-color: #bbaf9f; /* Active 狀態的顏色 */
+            //         }
+            //     }
+            // }
         }
-        .partialViewSlider-nav{
-            display: none;
-        }  
-        .partialViewSlider-dots{
+        .custom-dots-container{
             width: calc( 40px * 13);
             height: 4px;
             bottom: -26px;
@@ -662,37 +749,33 @@ section{
             position: relative;
             background: #f5f1ee;
             z-index: 1;
+            margin: 0 auto;
             @media (max-width: 600px) {
                 width: 90%;
             }
-            li{
+            .custom-dot{
                 width: 40px;
                 height: 4px;
                 position: absolute;
                 left: 0;
-                top: -15px;
+                top: 0;
                 z-index: 2;
                 @media (max-width: 600px) {
                     width: calc(100% / 13);
                 }
-                a{
+                &:before{
+                    content: "";
+                    display: block;
                     width: 100%;
                     height: 4px;
-                    margin: 0;
-                    &:before{
-                        width: 100%;
-                        height: 4px;
-                        border: 0;
-                        background: #f5f1ee;
-                        border-radius: 0;
-                    }
+                    border: 0;
+                    background: #f5f1ee;
+                    border-radius: 0;
                 }
                 &.active{
-                    a{
-                        &:before{
-                            border: 0;
-                            background: #bbaf9f;
-                        }
+                    &:before{
+                        border: 0;
+                        background: #bbaf9f;
                     }
 
                 }
@@ -799,6 +882,9 @@ section{
             flex-direction: column;
             margin-bottom: 160px;
         }
+        @media (max-width: 600px) {
+            // padding-bottom: 300px;
+        }
         .bg_txt{
             right: 0;
             top: 2%;
@@ -848,9 +934,12 @@ section{
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            margin-top: 60px;
+            background-color: #f3f2f0;;
             @media (max-width: 960px) {
                 width: 100%;
                 margin: 40px auto;
+                padding-bottom: 100px;
             }
             .maintxt{
                 width: 412px;
