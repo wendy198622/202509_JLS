@@ -544,50 +544,20 @@ section .theme4 {
   overflow: hidden;
 }
 
-@media (max-width: 960px) {
-  section .theme4 {
-    height: 100vh;
-    padding-bottom: 0;
-  }
-}
-
 section .theme4 .horizontal-scroll-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
   z-index: -1;
   overflow: hidden;
 }
 
 @media (max-width: 960px) {
   section .theme4 .horizontal-scroll-bg {
-    overflow-x: auto;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-  }
-  section .theme4 .horizontal-scroll-bg::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-section .theme4 .horizontal-scroll-bg img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: none;
-}
-
-@media (max-width: 960px) {
-  section .theme4 .horizontal-scroll-bg img {
-    height: 100vh;
-    width: auto;
-    -o-object-fit: initial;
-       object-fit: initial;
+    position: static;
+    top: auto;
+    left: auto;
   }
 }
 
